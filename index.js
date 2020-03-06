@@ -1,4 +1,4 @@
-import Weather from './src/Weather';
+import Weather from './src/js/Weather';
 
 const weather = new Weather();
 
