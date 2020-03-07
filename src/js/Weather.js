@@ -2,20 +2,19 @@ import WeatherData from './WeatherData.js'
 
 export default class Weather {
   constructor() {
-   
+    this.searchField = document.querySelector('#search');
   }
-  
+
   run() {
-    const searchField = document.querySelector('#search');
-
-    searchField.addEventListener('keyup', e => this.onSearch(e));
+    this.searchField.addEventListener('keyup', event => this.onSearch(event));
   }
 
-  onSearch(e) {
-    if(e.keyCode === 13) {
-      const weatherData = new WeatherData(e.target.value);
+  onSearch(event) {
+    if (event.keyCode === 13) {
+      const weatherData = new WeatherData(event.target.value);
       weatherData.getCurrentWeather();
       weatherData.getForecastWeather();
+      this.searchField.value = "";
     }
   }
 
