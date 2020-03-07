@@ -10,7 +10,8 @@ export default class WeatherData {
     axios.get('http://api.openweathermap.org/data/2.5/weather', {
       params: {
         q: this.city,
-        appid: 'da8a900a121c85c777ee940859e8e3c2'
+        appid: 'da8a900a121c85c777ee940859e8e3c2',
+        units: 'metric'
       }
     })
       .then(res => {
@@ -18,12 +19,13 @@ export default class WeatherData {
       })
       .catch(error => console.log(error));
   }
-  
+
   getForecastWeather() {
     axios.get('http://api.openweathermap.org/data/2.5/forecast', {
       params: {
         q: this.city,
-        appid: 'da8a900a121c85c777ee940859e8e3c2'
+        appid: 'da8a900a121c85c777ee940859e8e3c2',
+        units: 'metric'
       }
     })
       .then(res => {
