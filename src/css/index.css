@@ -1,3 +1,35 @@
 #search {
   display: block
 }
+
+#currentWeather :first-child {
+  font-size: 12px;
+  color: grey;
+}
+
+#currentWeather > img {
+  width: 100px;
+  height: 100px;
+  float: left
+}
+
+#currentWeather > img::after {
+  clear: both
+}
+
+#currentWeatherInfo :first-child {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#currentWeatherInfo :nth-child(2) {
+  color: blue;
+  margin-right: 5px;
+}
+
+#currentWeatherInfo :nth-child(3) {
+  color: red;
+  margin-right: 5px;
+}
