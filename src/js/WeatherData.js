@@ -1,3 +1,4 @@
+import { URL, API } from '../../config';
 import axios from 'axios';
 import draw from './draw';
 
@@ -7,11 +8,11 @@ export default class WeatherData {
   }
 
   getCurrentWeather() {
-    axios.get('http://api.openweathermap.org/data/2.5/weather', {
+    axios.get(URL.CURRENT_WEATHER, {
       params: {
         q: this.city,
-        appid: 'da8a900a121c85c777ee940859e8e3c2',
-        units: 'metric'
+        appid: API.AAPID,
+        units: API.UNITS
       }
     })
       .then(res => {
@@ -21,11 +22,11 @@ export default class WeatherData {
   }
 
   getForecastWeather() {
-    axios.get('http://api.openweathermap.org/data/2.5/forecast', {
+    axios.get(URL.FORECAST_WEATHER, {
       params: {
         q: this.city,
-        appid: 'da8a900a121c85c777ee940859e8e3c2',
-        units: 'metric'
+        appid: API.AAPID,
+        units: API.UNITS
       }
     })
       .then(res => {
