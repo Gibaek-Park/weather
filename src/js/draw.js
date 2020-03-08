@@ -7,6 +7,8 @@ const draw = {
     const currentWeather = document.querySelector('#currentWeather');
 
     const currentTime = document.createElement('p');
+
+    // XXX: 날짜 관련 Moment 사용하여 처리(외국 시간이 맞지 않음)
     const date = new Date(dt * 1000);
     const { dayOfWeek, year, month, day, hour } = getDateInfo(date);
     currentTime.textContent = `(${dayOfWeek}요일) ${hour}:00, ${year}년 ${month}월 ${day}일`
