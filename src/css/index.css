@@ -129,6 +129,11 @@ table {
   border-spacing: 0;
 }
 
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 #search {
   display: block;
   margin: 10px;
@@ -143,11 +148,6 @@ table {
   font-size: 12px;
   color: grey;
   margin-bottom: 15px;
-}
-
-#currentWeather>h2 {
-  font-size: 1.5em;
-  font-weight: bold;
 }
 
 #currentWeather>img {
