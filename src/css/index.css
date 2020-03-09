@@ -180,3 +180,45 @@ h2 {
   color: red;
   margin-right: 5px;
 }
+
+#forecastWeatherWrap {
+  margin: 30px 10px 10px 10px;
+}
+
+#forecastWeatherList {
+  margin-top: 15px;
+  width: 800px;
+}
+
+.forecastWeatherInfo {
+  width: 90px;
+  float: left;
+  border-right: solid 1px #f0f3f6;
+  text-align: center;
+}
+
+.forecastWeatherInfo:nth-child(8n) {
+  border-right: 0;
+}
+
+.forecastWeatherInfo>p {
+  margin-top: 15px;
+  font-size: 10px;
+  color: grey;
+}
+
+.forecastWeatherInfo>img {
+  display: block;
+  margin: 0px auto;
+}
+
+.forecastWeatherInfo>.tempMin {
+  color: blue;
+  font-size: 10px;
+  padding-right: 3px;
+}
+
+.forecastWeatherInfo>.tempMax {
+  color: red;
+  font-size: 10px;
+}

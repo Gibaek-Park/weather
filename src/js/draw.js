@@ -3,7 +3,7 @@ import { getDateInfo } from './util/util'
 const draw = {
   currentWeatherContent(res) {
     const { main: { temp, feels_like, temp_min, temp_max },
-      weather, wind, sys, name, cloudes, dt } = res.data;
+      weather, sys, name, dt } = res.data;
     const currentWeather = document.querySelector('#currentWeather');
 
     const currentTime = document.createElement('p');
@@ -53,7 +53,55 @@ const draw = {
   },
 
   forecastWeatherContent(res) {
-    // todo: res.data.list 복수의 값으로 뿌려주기. 5일치
+    const forecastWeatherWrap = document.querySelector('#forecastWeatherWrap');
+
+    if (forecastWeatherWrap.children.length !== 0) {
+      while (forecastWeatherWrap.firstChild) {
+        forecastWeatherWrap.removeChild(forecastWeatherWrap.firstChild);
+      }
+    }
+
+    const headerText = document.createElement('h2');
+    headerText.textContent = `Weekly Weather`;
+
+    const forecastWeatherList = document.createElement('ul');
+    forecastWeatherList.id = 'forecastWeatherList';
+
+    res.data.list.forEach(item => {
+      const { main: { temp_min, temp_max }, dt, weather } = item;
+      const forecastWeatherInfo = document.createElement('li');
+      forecastWeatherInfo.classList.add('forecastWeatherInfo');
+
+      const date = new Date(dt * 1000);
+      const { dayOfWeek, month, day, hour } = getDateInfo(date);
+      
+      const dateInfo = document.createElement('p');
+      dateInfo.textContent = `(${dayOfWeek}) ${hour}:00`;
+
+      const img = document.createElement('img');
+      const icon = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
+      img.setAttribute('src', icon);
+
+      const tempMinWrap = document.createElement('span');
+      tempMinWrap.classList.add('tempMin');
+      tempMinWrap.innerHTML = `${Math.floor(temp_min)}°C`;
+
+      const tempMaxWrap = document.createElement('span');
+      tempMaxWrap.classList.add('tempMax');
+      tempMaxWrap.innerHTML = `${Math.floor(temp_max)}°C`;
+
+      forecastWeatherInfo.appendChild(dateInfo);
+      forecastWeatherInfo.appendChild(img);
+      forecastWeatherInfo.appendChild(tempMinWrap);
+      forecastWeatherInfo.appendChild(tempMaxWrap);
+
+      forecastWeatherList.appendChild(forecastWeatherInfo);
+
+    });
+
+    forecastWeatherWrap.appendChild(headerText);
+    forecastWeatherWrap.appendChild(forecastWeatherList);
+    
   }
 }
 
