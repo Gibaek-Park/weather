@@ -73,7 +73,7 @@ const draw = {
       forecastWeatherInfo.classList.add('forecastWeatherInfo');
 
       const date = new Date(dt * 1000);
-      const { dayOfWeek, month, day, hour } = getDateInfo(date);
+      const { dayOfWeek, hour } = getDateInfo(date);
       
       const dateInfo = document.createElement('p');
       dateInfo.textContent = `(${dayOfWeek}) ${hour}:00`;
