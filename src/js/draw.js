@@ -1,4 +1,5 @@
-import { getDate } from './util/util'
+import { getDate } from './util/util';
+import { URL } from '../../config';
 
 const draw = {
   currentWeatherContent(res) {
@@ -15,7 +16,7 @@ const draw = {
     headerText.textContent = `Current Weather in ${name}, ${sys.country}`;
 
     const img = document.createElement('img');
-    const icon = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
+    const icon = URL.WEATHER_ICON(weather[0].icon);
     img.setAttribute('src', icon);
 
     const infoWeather = document.createElement('div');
@@ -76,7 +77,7 @@ const draw = {
       dateInfo.textContent = `(${dayOfWeek}) ${hour}:00`;
 
       const img = document.createElement('img');
-      const icon = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
+      const icon = URL.WEATHER_ICON(weather[0].icon);
       img.setAttribute('src', icon);
 
       const tempMinWrap = document.createElement('span');
