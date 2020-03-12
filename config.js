@@ -1,6 +1,6 @@
 const URL = {
-  CURRENT_WEATHER: "http://api.openweathermap.org/data/2.5/weather",
-  FORECAST_WEATHER: "http://api.openweathermap.org/data/2.5/forecast"
+  CURRENT_WEATHER: "https://api.openweathermap.org/data/2.5/weather",
+  FORECAST_WEATHER: "https://api.openweathermap.org/data/2.5/forecast"
 }
 
 const API = {
