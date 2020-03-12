@@ -10988,8 +10988,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL", function() { return URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API", function() { return API; });
 var URL = {
-  CURRENT_WEATHER: "http://api.openweathermap.org/data/2.5/weather",
-  FORECAST_WEATHER: "http://api.openweathermap.org/data/2.5/forecast"
+  CURRENT_WEATHER: "https://api.openweathermap.org/data/2.5/weather",
+  FORECAST_WEATHER: "https://api.openweathermap.org/data/2.5/forecast"
 };
 var API = {
   AAPID: "da8a900a121c85c777ee940859e8e3c2",
