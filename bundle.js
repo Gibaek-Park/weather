@@ -229,7 +229,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API", function() { return API; });
 var URL = {
   CURRENT_WEATHER: "https://api.openweathermap.org/data/2.5/weather",
-  FORECAST_WEATHER: "https://api.openweathermap.org/data/2.5/forecast"
+  FORECAST_WEATHER: "https://api.openweathermap.org/data/2.5/forecast",
+  WEATHER_ICON: function WEATHER_ICON(icon) {
+    return "https://openweathermap.org/img/w/".concat(icon, ".png");
+  }
 };
 var API = {
   AAPID: "da8a900a121c85c777ee940859e8e3c2",
@@ -2073,6 +2076,8 @@ module.exports = function spread(callback) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+
 
 var draw = {
   currentWeatherContent: function currentWeatherContent(res) {
@@ -2100,7 +2105,7 @@ var draw = {
     var headerText = document.createElement('h2');
     headerText.textContent = "Current Weather in ".concat(name, ", ").concat(sys.country);
     var img = document.createElement('img');
-    var icon = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
+    var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].getDate(weather[0].icon);
     img.setAttribute('src', icon);
     var infoWeather = document.createElement('div');
     infoWeather.id = 'currentWeatherInfo';
@@ -2157,7 +2162,7 @@ var draw = {
       var dateInfo = document.createElement('p');
       dateInfo.textContent = "(".concat(dayOfWeek, ") ").concat(hour, ":00");
       var img = document.createElement('img');
-      var icon = "http://openweathermap.org/img/w/" + weather[0].icon + ".png";
+      var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].getDate(weather[0].icon);
       img.setAttribute('src', icon);
       var tempMinWrap = document.createElement('span');
       tempMinWrap.classList.add('tempMin');
