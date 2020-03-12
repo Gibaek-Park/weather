@@ -2105,7 +2105,7 @@ var draw = {
     var headerText = document.createElement('h2');
     headerText.textContent = "Current Weather in ".concat(name, ", ").concat(sys.country);
     var img = document.createElement('img');
-    var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].getDate(weather[0].icon);
+    var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].WEATHER_ICON(weather[0].icon);
     img.setAttribute('src', icon);
     var infoWeather = document.createElement('div');
     infoWeather.id = 'currentWeatherInfo';
@@ -2162,7 +2162,7 @@ var draw = {
       var dateInfo = document.createElement('p');
       dateInfo.textContent = "(".concat(dayOfWeek, ") ").concat(hour, ":00");
       var img = document.createElement('img');
-      var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].getDate(weather[0].icon);
+      var icon = _config__WEBPACK_IMPORTED_MODULE_1__["URL"].WEATHER_ICON(weather[0].icon);
       img.setAttribute('src', icon);
       var tempMinWrap = document.createElement('span');
       tempMinWrap.classList.add('tempMin');
