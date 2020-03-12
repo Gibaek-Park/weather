@@ -6,7 +6,7 @@ const getDateInfo = dateObj => {
     year: dateObj.getFullYear(),
     month: dateObj.getMonth() + 1,
     day: dateObj.getDate(),
-    hour: dateObj.getHours()
+    hour: dateObj.getHours().toString().length === 1 ? `0${dateObj.getHours()}` : dateObj.getHours()
   }
 }
 
