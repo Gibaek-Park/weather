@@ -10861,6 +10861,9 @@ module.exports = function (regExp, replace) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_js_Weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(334);
+/* harmony import */ var _src_css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(496);
+/* harmony import */ var _src_css_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_css_index_css__WEBPACK_IMPORTED_MODULE_1__);
+
 
 var weather = new _src_js_Weather__WEBPACK_IMPORTED_MODULE_0__["default"]();
 weather.run();
@@ -29969,6 +29972,12 @@ webpackContext.id = 368;
   });
   return zhTw;
 });
+
+/***/ }),
+/* 496 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 /******/ ]);
