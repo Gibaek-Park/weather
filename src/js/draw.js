@@ -1,4 +1,4 @@
-import { getDateInfo } from './util/util'
+import { getDate } from './util/util'
 
 const draw = {
   currentWeatherContent(res) {
@@ -8,9 +8,7 @@ const draw = {
 
     const currentTime = document.createElement('p');
 
-    // XXX: 날짜 관련 Moment 사용하여 처리(외국 시간이 맞지 않음)
-    const date = new Date(dt * 1000);
-    const { dayOfWeek, year, month, day, hour } = getDateInfo(date);
+    const { dayOfWeek, year, month, day, hour } = getDate(dt);
     currentTime.textContent = `(${dayOfWeek}요일) ${hour}:00, ${year}년 ${month}월 ${day}일`
 
     const headerText = document.createElement('h2');
@@ -72,8 +70,7 @@ const draw = {
       const forecastWeatherInfo = document.createElement('li');
       forecastWeatherInfo.classList.add('forecastWeatherInfo');
 
-      const date = new Date(dt * 1000);
-      const { dayOfWeek, hour } = getDateInfo(date);
+      const { dayOfWeek, hour } = getDate(dt);
       
       const dateInfo = document.createElement('p');
       dateInfo.textContent = `(${dayOfWeek}) ${hour}:00`;

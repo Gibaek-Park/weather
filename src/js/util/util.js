@@ -1,13 +1,18 @@
-const getDateInfo = dateObj => {
+import moment from 'moment';
+
+const getDate = dt => {
+
   const KRDayOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+  const date = moment.unix(dt);
 
   return {
-    dayOfWeek: KRDayOfWeek[dateObj.getDay()],
-    year: dateObj.getFullYear(),
-    month: dateObj.getMonth() + 1,
-    day: dateObj.getDate(),
-    hour: dateObj.getHours().toString().length === 1 ? `0${dateObj.getHours()}` : dateObj.getHours()
+    dayOfWeek: KRDayOfWeek[date.day()],
+    year: date.year(),
+    month: date.month() + 1,
+    day: date.date(),
+    hour: date.hours()
   }
+  
 }
 
-export { getDateInfo }
+export { getDate }
