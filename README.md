@@ -1,7 +1,7 @@
 # Weather web
 
 1. 프로젝트 명: 순수 자바스크립트를 이용해 만든 날씨 예보 사이트
-2. Demo: [날씨 예보 데모](https://4green.github.io/weather)
+2. Demo: [날씨 예보 데모](https://Gibaek-Park.github.io/weather)
 3. 기술 스택:
 - Javascript
 - HTML
